@@ -1,0 +1,26 @@
+from building import *
+
+cwd     = GetCurrentDir()
+src	= Glob('*.c')
+CPPPATH = [cwd, str(Dir('#'))]
+
+# remove no need file.
+if GetDepend(  'RT_USING_RTGUI') == False:
+	SrcRemove(src, 'calculator.c')
+	SrcRemove(src, 'ui_button.c')
+
+if GetDepend('RT_USING_USER_MAIN') == True:
+	SrcRemove(src, 'application.c')
+	SrcRemove(src, 'startup.c')
+
+if GetDepend('RT_USING_LWIP') == False:
+	SrcRemove(src, 'test_client.c')
+	SrcRemove(src, 'test_websrv.c')
+	
+if GetDepend('PKG_USING_WEBCLIENT') == False:
+	SrcRemove(src, 'test_wget.c')
+	SrcRemove(src, 'test_wpost.c')
+	
+group = DefineGroup('Applications', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')
