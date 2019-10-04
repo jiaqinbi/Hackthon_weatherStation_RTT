@@ -1,6 +1,6 @@
-# RT-Thread #
+#### 作者声明
 
-这个仓库放了基于Loongson 1C CPU的RTT 内核源码和示例。 网盘中存放了 内核源码、必要的工具链、学习视频、电路图等 。
+​	 “红红火火恍恍惚惚”团队**<u>*赵航`</u>***编写
  
 [龙芯官方ftp](ftp：ftp://ftp.loongnix.org/loongsonpi/os/RTThread/) 
 ```ftp://ftp.loongnix.org/loongsonpi/os/RTThread/```
